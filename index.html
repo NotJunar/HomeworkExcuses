@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Excuses</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a;  /* Slate 900 */
+            color: #f1f5f9;  /* Slate 100 */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 36rem;
+            padding: 2rem;
+            background-color: #1e293b;  /* Slate 800 */
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-2px);
+        }
+
+        .excuse {
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .reload {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #10b981;  /* Emerald 500 */
+            color: #ffffff;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .reload:hover {
+            background-color: #059669;  /* Emerald 600 */
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .reload:active {
+            transform: translateY(0);
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f8fafc;  /* Slate 50 */
+                color: #0f172a;  /* Slate 900 */
+            }
+            
+            .container {
+                background-color: #ffffff;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="excuse" id="excuse">Loading your next excuse...</div>
+        <button class="reload" onclick="location.reload()">Give Me Another Excuse</button>
+    </div>
+    <script>
+        const excuses = [
+            "My dog ate my homework!",
+            "I left it on the bus.",
+            "I thought it was due next week.",
+            "The Wi-Fi went out while I was researching.",
+            "I spilled coffee all over it.",
+            "The printer ran out of ink.",
+            "I swear I emailed it, did you not get it?",
+            "I was too busy studying for another class.",
+            "My little brother tore it apart.",
+            "I left it in my locker, and the school’s locked now.",
+            "My computer crashed, and I lost everything.",
+            "There was a blackout at my house.",
+            "I accidentally did the wrong assignment.",
+            "My friend borrowed it to copy and never gave it back.",
+            "I wasn’t feeling well last night.",
+            "The family cat puked all over it.",
+            "I put it in my backpack, but now it’s gone.",
+            "I thought we didn’t have any homework!",
+            "I was helping my grandma all day yesterday.",
+            "The dog hid it under the couch.",
+            "My notebook fell in a puddle on the way to school.",
+            "It’s at home on the kitchen table. I swear!",
+            "I had a soccer game and got home super late.",
+            "It’s in my dad’s car, and he’s at work.",
+            "The homework app glitched, and I couldn’t submit it.",
+            "I swear I brought it, but I can’t find it now.",
+            "The tornado warning distracted me all night.",
+            "My baby sister scribbled all over it.",
+            "I lent it to a friend, and they lost it.",
+            "It got mixed up with recycling by accident.",
+            "My hamster got loose and chewed it up.",
+            "I was grounded from using my laptop.",
+            "I thought today was a holiday!",
+            "We had a family emergency last night.",
+            "The fire alarm went off, and we had to evacuate.",
+            "It’s in my other backpack at home.",
+            "I sent it, but maybe it went to your spam folder?",
+            "My car broke down, and I forgot it in the chaos.",
+            "I was practicing self-care and needed a mental health day.",
+            "The dog drooled all over it.",
+            "It’s done, but I forgot to bring it!",
+            "I couldn’t print it because my dad was hogging the printer.",
+            "I was doing it, and then Netflix auto-play got me.",
+            "The wind blew it right out of my hand.",
+            "Aliens abducted me, and they don’t care about deadlines.",
+            "I used disappearing ink by mistake.",
+            "My house got TP’d, and it got mistaken for the rolls.",
+            "I accidentally donated it to charity.",
+            "It flew out the window when we were driving.",
+            "I was too busy defending my Minecraft base from creepers.",
+            "I spent all night on TikTok instead. Oops!",
+            "It’s under my bed, but there’s a monster down there!",
+            "I thought it was due in class, not before class!",
+            "My neighbor’s dog stole it. No joke!",
+            "I had to babysit all night, so I couldn’t focus.",
+            "I sent it to the wrong teacher.",
+            "I was so stressed I forgot to hit save.",
+            "I dropped my folder in the toilet."
+        ];
+
+        const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
+        document.getElementById("excuse").textContent = randomExcuse;
+    </script>
+</body>
+</html>
